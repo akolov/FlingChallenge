@@ -11,5 +11,6 @@ import Foundation
 enum FlingChallengeError: ErrorType {
 
   case InitializationError(description: String)
+  case ConfigurationError(description: String)
 
 }
