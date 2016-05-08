@@ -20,6 +20,11 @@ class EndpointsTestCase: XCTestCase {
     components = NSURLComponents(URL: FlingChallengeKit.baseURL, resolvingAgainstBaseURL: false)
     XCTAssertNotNil(components)
     XCTAssertEqual(components?.scheme, "http")
+
+    FlingChallengeKit.secure = true
+    components = NSURLComponents(URL: FlingChallengeKit.baseURL, resolvingAgainstBaseURL: false)
+    XCTAssertNotNil(components)
+    XCTAssertEqual(components?.scheme, "https")
   }
 
   func testFeedURL() {
