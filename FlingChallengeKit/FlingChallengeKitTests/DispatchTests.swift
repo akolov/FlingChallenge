@@ -13,7 +13,7 @@ class DispatchTests: XCTestCase {
 
   struct DispatchTestError: ErrorType { }
 
-  let queue = dispatch_queue_create("com.alexkolov.FlingChallengeKitTests", DISPATCH_QUEUE_CONCURRENT)
+  let queue = dispatch_queue_create("com.alexkolov.DispatchTests", DISPATCH_QUEUE_CONCURRENT)
 
   func testDispatchOnceThrows() {
     struct Static {
