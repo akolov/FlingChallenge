@@ -1,5 +1,5 @@
 //
-//  EndpointsTestCase.swift
+//  EndpointsTests.swift
 //  FlingChallengeKit
 //
 //  Created by Alexander Kolov on 5/9/16.
@@ -9,7 +9,7 @@
 @testable import FlingChallengeKit
 import XCTest
 
-class EndpointsTestCase: XCTestCase {
+class EndpointsTests: XCTestCase {
 
   func testBaseURL() {
     XCTAssertTrue(FlingChallengeKit.secure)

@@ -34,7 +34,7 @@
 		FAC6B6151CDFD570007C1F9D /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6141CDFD570007C1F9D /* DataControllerTests.swift */; };
 		FAC6B6221CDFEB54007C1F9D /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6211CDFEB54007C1F9D /* Endpoints.swift */; };
 		FAC6B6241CDFECC6007C1F9D /* FlingChallengeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6231CDFECC6007C1F9D /* FlingChallengeKit.swift */; };
-		FAC6B6281CDFF1AF007C1F9D /* EndpointsTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6271CDFF1AF007C1F9D /* EndpointsTestCase.swift */; };
+		FAC6B6281CDFF1AF007C1F9D /* EndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,7 @@
 		FAC6B6141CDFD570007C1F9D /* DataControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataControllerTests.swift; sourceTree = "<group>"; };
 		FAC6B6211CDFEB54007C1F9D /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		FAC6B6231CDFECC6007C1F9D /* FlingChallengeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlingChallengeKit.swift; sourceTree = "<group>"; };
-		FAC6B6271CDFF1AF007C1F9D /* EndpointsTestCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsTestCase.swift; sourceTree = "<group>"; };
+		FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 				FA1CA73B1CDF942C0036CAA4 /* FlingChallengeKitTests.swift */,
 				FAC6B6121CDFCB3D007C1F9D /* DispatchTests.swift */,
 				FAC6B6141CDFD570007C1F9D /* DataControllerTests.swift */,
-				FAC6B6271CDFF1AF007C1F9D /* EndpointsTestCase.swift */,
+				FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */,
 				FA1CA73D1CDF942C0036CAA4 /* Info.plist */,
 			);
 			path = FlingChallengeKitTests;
@@ -318,7 +318,7 @@
 			files = (
 				FA1CA73C1CDF942C0036CAA4 /* FlingChallengeKitTests.swift in Sources */,
 				FAC6B6151CDFD570007C1F9D /* DataControllerTests.swift in Sources */,
-				FAC6B6281CDFF1AF007C1F9D /* EndpointsTestCase.swift in Sources */,
+				FAC6B6281CDFF1AF007C1F9D /* EndpointsTests.swift in Sources */,
 				FAC6B6131CDFCB3D007C1F9D /* DispatchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
