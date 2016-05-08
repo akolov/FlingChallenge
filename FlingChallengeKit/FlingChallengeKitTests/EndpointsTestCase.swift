@@ -12,6 +12,7 @@ import XCTest
 class EndpointsTestCase: XCTestCase {
 
   func testBaseURL() {
+    XCTAssertTrue(FlingChallengeKit.secure)
     var components = NSURLComponents(URL: FlingChallengeKit.baseURL, resolvingAgainstBaseURL: false)
     XCTAssertNotNil(components)
     XCTAssertEqual(components?.scheme, "https")
