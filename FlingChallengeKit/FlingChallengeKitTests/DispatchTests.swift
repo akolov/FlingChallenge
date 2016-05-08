@@ -89,6 +89,8 @@ class DispatchTests: XCTestCase {
     let expectationThrow = expectationWithDescription("dispatch_sync_main should throw")
 
     dispatch_async(queue) {
+      XCTAssertFalse(NSThread.isMainThread())
+
       do {
         try dispatch_sync_main {
           XCTAssertTrue(NSThread.isMainThread())
