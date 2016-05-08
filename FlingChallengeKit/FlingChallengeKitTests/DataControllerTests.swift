@@ -39,6 +39,7 @@ class DataControllerTests: XCTestCase {
         let privateContext = anotherController.managedObjectContext
         XCTAssertNotNil(privateContext)
         XCTAssertTrue(privateContext.concurrencyType == .PrivateQueueConcurrencyType)
+        XCTAssertTrue(privateContext.parentContext?.concurrencyType == .MainQueueConcurrencyType)
         expectation.fulfill()
       }
       catch {
