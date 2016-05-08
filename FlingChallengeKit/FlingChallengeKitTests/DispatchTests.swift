@@ -62,6 +62,7 @@ class DispatchTests: XCTestCase {
     let expectationThrow = expectationWithDescription("dispatch_sync_throws should throw")
     do {
       try dispatch_sync_throws(queue) {
+        expectationThrow.fulfill()
         throw DispatchTestError()
       }
 
@@ -69,7 +70,6 @@ class DispatchTests: XCTestCase {
     }
     catch {
       XCTAssertTrue(error is DispatchTestError)
-      expectationThrow.fulfill()
     }
 
     waitForExpectationsWithTimeout(5, handler: nil)
@@ -101,12 +101,12 @@ class DispatchTests: XCTestCase {
 
       do {
         try dispatch_sync_main {
+          expectationThrow.fulfill()
           throw DispatchTestError()
         }
       }
       catch {
         XCTAssertTrue(error is DispatchTestError)
-        expectationThrow.fulfill()
       }
     }
 
