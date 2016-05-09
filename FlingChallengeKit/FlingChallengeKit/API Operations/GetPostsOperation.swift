@@ -90,25 +90,30 @@ public final class GetPostsOperation: Operation {
             return
           }
 
-          try DataController().withManagedObjectContext { context in
+          try DataController().withPrivateContext { context in
             var counter = 0
             for object in list {
               guard !self.cancelled else {
-                return
+                break
               }
 
-              _ = try Post(managedObjectContext: context, representation: object)
+              _ = try Post.createOrUpdate(managedObjectContext: context, representation: object)
 
               if counter % self.saveBatchSize == 0 {
                 if context.hasChanges {
                   try context.save()
-                  if let parentContext = context.parentContext where parentContext.hasChanges {
-                    try parentContext.save()
+
+                  if let parentContext = context.parentContext {
+                    try parentContext.performBlockAndWaitThrowable {
+                      if parentContext.hasChanges {
+                        try parentContext.save()
+                      }
+                    }
                   }
                 }
-
-                counter += 1
               }
+
+              counter += 1
             }
           }
         }

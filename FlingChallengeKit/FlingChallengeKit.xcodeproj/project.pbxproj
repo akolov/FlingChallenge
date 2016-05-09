@@ -43,6 +43,7 @@
 		FAC6B6301CE019C9007C1F9D /* GetPostImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B62F1CE019C9007C1F9D /* GetPostImageOperation.swift */; };
 		FAC6B6321CE01FF8007C1F9D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6311CE01FF8007C1F9D /* UIImage.swift */; };
 		FAC6B6341CE025AB007C1F9D /* PostImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6331CE025AB007C1F9D /* PostImageTests.swift */; };
+		FADBD56B1CE0EFAD00942375 /* NSManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBD56A1CE0EFAD00942375 /* NSManagedObjectContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		FAC6B62F1CE019C9007C1F9D /* GetPostImageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPostImageOperation.swift; sourceTree = "<group>"; };
 		FAC6B6311CE01FF8007C1F9D /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		FAC6B6331CE025AB007C1F9D /* PostImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageTests.swift; sourceTree = "<group>"; };
+		FADBD56A1CE0EFAD00942375 /* NSManagedObjectContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			children = (
 				FAC6B6101CDFC5D1007C1F9D /* Dispatch.swift */,
 				FAC6B6291CE00589007C1F9D /* Dictionary.swift */,
+				FADBD56A1CE0EFAD00942375 /* NSManagedObjectContext.swift */,
 				FAC6B6311CE01FF8007C1F9D /* UIImage.swift */,
 			);
 			path = Extensions;
@@ -337,6 +340,7 @@
 				FAC6B60A1CDF9D90007C1F9D /* Post.swift in Sources */,
 				FAC6B6111CDFC5D1007C1F9D /* Dispatch.swift in Sources */,
 				FAC6B6201CDFE9C1007C1F9D /* SessionManager.swift in Sources */,
+				FADBD56B1CE0EFAD00942375 /* NSManagedObjectContext.swift in Sources */,
 				FAC6B60E1CDFB830007C1F9D /* FlingChallengeError.swift in Sources */,
 				FAC6B62A1CE00589007C1F9D /* Dictionary.swift in Sources */,
 				FAC6B6221CDFEB54007C1F9D /* Endpoints.swift in Sources */,
@@ -474,7 +478,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FlingChallengeKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexkolov.FlingChallengeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -490,7 +496,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = FlingChallengeKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexkolov.FlingChallengeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

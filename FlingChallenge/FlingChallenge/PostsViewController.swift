@@ -56,8 +56,7 @@ class PostsViewController: UICollectionViewController {
     fetchRequest.fetchBatchSize = self.dataBatchSize
 
     do {
-      let dataController = try DataController()
-      let moc = dataController.managedObjectContext
+      let moc = try DataController().mainQueueManagedObjectContext
       let frc = NSFetchedResultsController(fetchRequest: fetchRequest,
                                            managedObjectContext: moc,
                                            sectionNameKeyPath: nil,

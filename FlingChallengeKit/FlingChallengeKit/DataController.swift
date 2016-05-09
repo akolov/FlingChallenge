@@ -28,25 +28,25 @@ final public class DataController {
     return urls[urls.count - 1]
   }()
 
-  public lazy var managedObjectContext: NSManagedObjectContext = {
-    if NSThread.isMainThread() {
-      return DataController._mainQueueManagedObjectContext
-    }
-    else {
-      let coordinator = DataController.persistentStoreCoordinator
-      var context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
-      context.parentContext = DataController._mainQueueManagedObjectContext
-      context.mergePolicy = NSMergePolicy(mergeType: .MergeByPropertyObjectTrumpMergePolicyType)
-      return context
-    }
+  public lazy var mainQueueManagedObjectContext: NSManagedObjectContext = {
+    return DataController._mainQueueManagedObjectContext
   }()
 
-  public func withManagedObjectContext(closure: (NSManagedObjectContext) throws -> Void) throws {
-    try closure(managedObjectContext)
-    if managedObjectContext.hasChanges {
-      try managedObjectContext.save()
-      if let parentContext = managedObjectContext.parentContext where parentContext.hasChanges {
-        try parentContext.save()
+  public lazy var privateManagedObjectContext: NSManagedObjectContext = {
+    return DataController._privateQueueManagedObjectContext
+  }()
+
+  public func withPrivateContext(closure: (NSManagedObjectContext) throws -> Void) throws {
+    try privateManagedObjectContext.performBlockAndWaitThrowable {
+      try closure(self.privateManagedObjectContext)
+      if self.privateManagedObjectContext.hasChanges {
+        try self.privateManagedObjectContext.save()
+      }
+    }
+
+    try self.mainQueueManagedObjectContext.performBlockAndWaitThrowable {
+      if self.mainQueueManagedObjectContext.hasChanges {
+        try self.mainQueueManagedObjectContext.save()
       }
     }
   }
@@ -96,8 +96,12 @@ private extension DataController {
 
     let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
     context.persistentStoreCoordinator = coordinator
-
     _mainQueueManagedObjectContext = context
+
+    let privateContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+    privateContext.parentContext = _mainQueueManagedObjectContext
+    privateContext.mergePolicy = NSMergePolicy(mergeType: .MergeByPropertyObjectTrumpMergePolicyType)
+    _privateQueueManagedObjectContext = privateContext
   }
 
   private static let persistentStoreURL: NSURL = {
@@ -113,5 +117,6 @@ private extension DataController {
   private static var managedObjectModel: NSManagedObjectModel?
   private static var persistentStoreCoordinator: NSPersistentStoreCoordinator?
   private static var _mainQueueManagedObjectContext: NSManagedObjectContext!
+  private static var _privateQueueManagedObjectContext: NSManagedObjectContext!
 
 }
