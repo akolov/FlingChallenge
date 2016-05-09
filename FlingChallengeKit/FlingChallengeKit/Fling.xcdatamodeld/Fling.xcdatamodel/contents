@@ -6,11 +6,6 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="userName" attributeType="String" syncable="YES"/>
-        <uniquenessConstraints>
-            <uniquenessConstraint>
-                <constraint value="identifier"/>
-            </uniquenessConstraint>
-        </uniquenessConstraints>
     </entity>
     <elements>
         <element name="Post" positionX="-63" positionY="-18" width="128" height="120"/>
