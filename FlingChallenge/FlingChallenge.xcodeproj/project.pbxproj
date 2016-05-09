@@ -15,7 +15,6 @@
 		FAC96C751CDF4FDE008FAE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC96C731CDF4FDE008FAE92 /* Main.storyboard */; };
 		FAC96C7A1CDF4FDE008FAE92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC96C791CDF4FDE008FAE92 /* Assets.xcassets */; };
 		FAC96C7D1CDF4FDE008FAE92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC96C7B1CDF4FDE008FAE92 /* LaunchScreen.storyboard */; };
-		FAC96C881CDF4FDE008FAE92 /* FlingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC96C871CDF4FDE008FAE92 /* FlingChallengeTests.swift */; };
 		FAC96C931CDF4FDE008FAE92 /* FlingChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC96C921CDF4FDE008FAE92 /* FlingChallengeUITests.swift */; };
 		FADBD5631CE0E6B600942375 /* FlingChallengeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADBD55E1CE0E69E00942375 /* FlingChallengeKit.framework */; };
 		FADBD5641CE0E6B600942375 /* FlingChallengeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FADBD55E1CE0E69E00942375 /* FlingChallengeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -93,8 +92,6 @@
 		FAC96C7C1CDF4FDE008FAE92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAC96C7E1CDF4FDE008FAE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAC96C831CDF4FDE008FAE92 /* FlingChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlingChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAC96C871CDF4FDE008FAE92 /* FlingChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlingChallengeTests.swift; sourceTree = "<group>"; };
-		FAC96C891CDF4FDE008FAE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAC96C8E1CDF4FDE008FAE92 /* FlingChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlingChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC96C921CDF4FDE008FAE92 /* FlingChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlingChallengeUITests.swift; sourceTree = "<group>"; };
 		FAC96C941CDF4FDE008FAE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				FAC96C6E1CDF4FDE008FAE92 /* FlingChallenge */,
-				FAC96C861CDF4FDE008FAE92 /* FlingChallengeTests */,
 				FAC96C911CDF4FDE008FAE92 /* FlingChallengeUITests */,
 				FA1CA7491CDF97D00036CAA4 /* Frameworks */,
 				FAC96C6D1CDF4FDE008FAE92 /* Products */,
@@ -180,15 +176,6 @@
 				FAC96C7E1CDF4FDE008FAE92 /* Info.plist */,
 			);
 			path = FlingChallenge;
-			sourceTree = "<group>";
-		};
-		FAC96C861CDF4FDE008FAE92 /* FlingChallengeTests */ = {
-			isa = PBXGroup;
-			children = (
-				FAC96C871CDF4FDE008FAE92 /* FlingChallengeTests.swift */,
-				FAC96C891CDF4FDE008FAE92 /* Info.plist */,
-			);
-			path = FlingChallengeTests;
 			sourceTree = "<group>";
 		};
 		FAC96C911CDF4FDE008FAE92 /* FlingChallengeUITests */ = {
@@ -397,7 +384,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAC96C881CDF4FDE008FAE92 /* FlingChallengeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
