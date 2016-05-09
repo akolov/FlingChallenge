@@ -38,16 +38,16 @@ public class _Post: NSManagedObject {
     // MARK: - Properties
 
     @NSManaged public
-    var identifier: NSNumber?
+    var identifier: Int64
 
     @NSManaged public
-    var imageID: NSNumber?
+    var imageID: Int64
 
     @NSManaged public
     var title: String?
 
     @NSManaged public
-    var userID: NSNumber?
+    var userID: Int64
 
     @NSManaged public
     var userName: String

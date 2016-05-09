@@ -17,12 +17,12 @@ public protocol GetPostImageOperationDelegate: class {
 
 public final class GetPostImageOperation: Operation {
 
-  public init(imageID: Int) {
+  public init(imageID: Int64) {
     self.imageID = imageID
     super.init()
   }
 
-  private(set) public var imageID: Int
+  private(set) public var imageID: Int64
   private(set) public var image: UIImage?
 
   public weak var delegate: GetPostImageOperationDelegate?
