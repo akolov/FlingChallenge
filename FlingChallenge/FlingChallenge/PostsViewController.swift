@@ -25,10 +25,13 @@ class PostsViewController: UICollectionViewController {
     }
 
     let operation = GetPostsOperation()
+    operation.saveBatchSize = dataBatchSize
     operationQueue.addOperation(operation)
   }
 
   // MARK: Properties
+
+  let dataBatchSize = 20
 
   let operationQueue: NSOperationQueue = {
     let queue = NSOperationQueue()
@@ -42,7 +45,7 @@ class PostsViewController: UICollectionViewController {
     // In a better world API would have defined pagination and sorting
     // For now I'll sort by ascending identifier to provide better loading experience
     fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: true)]
-    fetchRequest.fetchBatchSize = 20
+    fetchRequest.fetchBatchSize = self.dataBatchSize
 
     do {
       let dataController = try DataController()
