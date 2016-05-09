@@ -132,9 +132,9 @@
 				FA8418E61CE0728400BEC396 /* Alerts.swift */,
 				FAC96C711CDF4FDE008FAE92 /* PostsViewController.swift */,
 				FA8418E81CE0780400BEC396 /* PostCollectionViewCell.swift */,
+				FAC96C7B1CDF4FDE008FAE92 /* LaunchScreen.storyboard */,
 				FAC96C731CDF4FDE008FAE92 /* Main.storyboard */,
 				FAC96C791CDF4FDE008FAE92 /* Assets.xcassets */,
-				FAC96C7B1CDF4FDE008FAE92 /* LaunchScreen.storyboard */,
 				FAC96C7E1CDF4FDE008FAE92 /* Info.plist */,
 			);
 			path = FlingChallenge;
