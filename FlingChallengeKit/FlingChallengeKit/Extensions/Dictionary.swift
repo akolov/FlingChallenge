@@ -11,9 +11,12 @@ import Foundation
 extension Dictionary where Key: StringLiteralConvertible {
 
   func get<T>(key: Key) throws -> T {
-    guard let typed = self[key] as? T else {
-      let value = self[key]
-      throw FlingChallengeError.DeserializationError(description: "Value for key \(key) has invalid type: \(value).")
+    guard let fetched = self[key] else {
+      throw FlingChallengeError.DeserializationError(description: "The key \(key) was not found.")
+    }
+
+    guard let typed = fetched as? T else {
+      throw FlingChallengeError.DeserializationError(description: "Value for key \(key) has invalid type: \(fetched).")
     }
 
     return typed
