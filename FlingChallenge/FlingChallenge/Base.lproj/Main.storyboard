@@ -33,6 +33,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kSm-Gb-PLt" customClass="RemoteImageView" customModule="FlingChallenge" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="284" height="235"/>
+                                                    <color key="backgroundColor" white="0.79770114942528725" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrh-DC-3MV">
                                                     <rect key="frame" x="0.0" y="239" width="284" height="45"/>
