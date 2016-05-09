@@ -65,7 +65,6 @@ class PostsViewController: UICollectionViewController {
     return nil
   }()
 
-
 }
 
 // MARK: NSFetchedResultsControllerDelegate
@@ -96,9 +95,11 @@ extension PostsViewController {
                                                                      forIndexPath: indexPath) as! PostCollectionViewCell
     if let post = fetchedResultsController?.objectAtIndexPath(indexPath) {
       cell.titleLabel.text = post.title
+      cell.imageView.imageID = post.imageID
     }
     else {
       cell.titleLabel.text = nil
+      cell.imageView.imageID = nil
     }
 
     return cell

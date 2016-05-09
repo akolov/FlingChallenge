@@ -10,7 +10,12 @@ import UIKit
 
 class PostCollectionViewCell: UICollectionViewCell {
 
-  @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet weak var imageView: RemoteImageView!
   @IBOutlet weak var titleLabel: UILabel!
+
+  override func prepareForReuse() {
+    imageView.imageID = nil
+    super.prepareForReuse()
+  }
 
 }

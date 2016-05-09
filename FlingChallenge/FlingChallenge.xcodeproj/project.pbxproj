@@ -11,6 +11,7 @@
 		FA1CA7481CDF972F0036CAA4 /* FlingChallengeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA1CA7461CDF972F0036CAA4 /* FlingChallengeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA8418E71CE0728400BEC396 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8418E61CE0728400BEC396 /* Alerts.swift */; };
 		FA8418E91CE0780400BEC396 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8418E81CE0780400BEC396 /* PostCollectionViewCell.swift */; };
+		FA8418EC1CE08FF900BEC396 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8418EB1CE08FF900BEC396 /* RemoteImageView.swift */; };
 		FAC96C701CDF4FDE008FAE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC96C6F1CDF4FDE008FAE92 /* AppDelegate.swift */; };
 		FAC96C721CDF4FDE008FAE92 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC96C711CDF4FDE008FAE92 /* PostsViewController.swift */; };
 		FAC96C751CDF4FDE008FAE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC96C731CDF4FDE008FAE92 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		FA1CA7461CDF972F0036CAA4 /* FlingChallengeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = FlingChallengeKit.framework; path = "/Users/alex/Library/Developer/Xcode/DerivedData/FlingChallenge-ggmpzohvtlbrsgbennxqsokqchsn/Build/Products/Debug-iphonesimulator/FlingChallengeKit.framework"; sourceTree = "<absolute>"; };
 		FA8418E61CE0728400BEC396 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		FA8418E81CE0780400BEC396 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA8418EB1CE08FF900BEC396 /* RemoteImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		FAC96C6C1CDF4FDE008FAE92 /* FlingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC96C6F1CDF4FDE008FAE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC96C711CDF4FDE008FAE92 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA8418EA1CE08FCB00BEC396 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA8418EB1CE08FF900BEC396 /* RemoteImageView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FAC96C631CDF4FDE008FAE92 = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		FAC96C6E1CDF4FDE008FAE92 /* FlingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				FA8418EA1CE08FCB00BEC396 /* Extensions */,
 				FAC96C6F1CDF4FDE008FAE92 /* AppDelegate.swift */,
 				FA8418E61CE0728400BEC396 /* Alerts.swift */,
 				FAC96C711CDF4FDE008FAE92 /* PostsViewController.swift */,
@@ -311,6 +322,7 @@
 				FA8418E91CE0780400BEC396 /* PostCollectionViewCell.swift in Sources */,
 				FAC96C721CDF4FDE008FAE92 /* PostsViewController.swift in Sources */,
 				FA8418E71CE0728400BEC396 /* Alerts.swift in Sources */,
+				FA8418EC1CE08FF900BEC396 /* RemoteImageView.swift in Sources */,
 				FAC96C701CDF4FDE008FAE92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
