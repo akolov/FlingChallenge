@@ -116,8 +116,8 @@
 				FA1CA72F1CDF942C0036CAA4 /* FlingChallengeKit.h */,
 				FAC6B60B1CDFAF42007C1F9D /* DataController.swift */,
 				FAC6B6211CDFEB54007C1F9D /* Endpoints.swift */,
-				FAC6B6231CDFECC6007C1F9D /* FlingChallengeKit.swift */,
 				FAC6B60D1CDFB830007C1F9D /* FlingChallengeError.swift */,
+				FAC6B6231CDFECC6007C1F9D /* FlingChallengeKit.swift */,
 				FAC6B6021CDF9C82007C1F9D /* Fling.xcdatamodeld */,
 				FA1CA7311CDF942C0036CAA4 /* Info.plist */,
 			);
@@ -128,8 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				FA1CA73B1CDF942C0036CAA4 /* FlingChallengeKitTests.swift */,
-				FAC6B6121CDFCB3D007C1F9D /* DispatchTests.swift */,
 				FAC6B6141CDFD570007C1F9D /* DataControllerTests.swift */,
+				FAC6B6121CDFCB3D007C1F9D /* DispatchTests.swift */,
 				FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */,
 				FA1CA73D1CDF942C0036CAA4 /* Info.plist */,
 				FAC6B62D1CE009D9007C1F9D /* PostTests.swift */,
