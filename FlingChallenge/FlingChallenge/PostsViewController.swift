@@ -39,7 +39,9 @@ class PostsViewController: UICollectionViewController {
 
   lazy var fetchedResultsController: NSFetchedResultsController? = {
     let fetchRequest = NSFetchRequest(entityName: Post.entityName())
-    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: false)]
+    // In a better world API would have defined pagination and sorting
+    // For now I'll sort by ascending identifier to provide better loading experience
+    fetchRequest.sortDescriptors = [NSSortDescriptor(key: "identifier", ascending: true)]
     fetchRequest.fetchBatchSize = 20
 
     do {
