@@ -51,6 +51,21 @@ final public class DataController {
     }
   }
 
+  public func destroyPersistentStore() throws {
+    try DataController.persistentStoreCoordinator?.destroyPersistentStoreAtURL(
+      DataController.persistentStoreURL,
+      withType: NSSQLiteStoreType,
+      options: DataController.persistentStoreOptions
+    )
+
+    try DataController.persistentStoreCoordinator?.addPersistentStoreWithType(
+      NSSQLiteStoreType,
+      configuration: nil,
+      URL: DataController.persistentStoreURL,
+      options: DataController.persistentStoreOptions
+    )
+  }
+
 }
 
 // MARK: Private
