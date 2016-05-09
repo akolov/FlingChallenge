@@ -19,7 +19,6 @@ class RemoteImageView: UIImageView {
 
   var imageID: Int64? {
     didSet {
-      operation?.cancel()
       if let imageID = imageID {
         let _operation = GetPostImageOperation(imageID: imageID)
         _operation.delegate = self
@@ -27,13 +26,18 @@ class RemoteImageView: UIImageView {
 
         RemoteImageView.operationQueue.addOperation(_operation)
       }
-      else {
-        image = nil
-      }
     }
   }
 
-  private weak var operation: NSOperation?
+  private weak var operation: GetPostImageOperation?
+
+  func cancelImageLoadingOperation() {
+    operation?.cancel()
+    operation?.delegate = nil
+    operation = nil
+    image = nil
+    imageID = nil
+  }
 
 }
 

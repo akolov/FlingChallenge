@@ -36,7 +36,7 @@ class PostCollectionViewCell: UICollectionViewCell {
 
   override func prepareForReuse() {
     super.prepareForReuse()
-    imageView.imageID = nil
+    imageView.cancelImageLoadingOperation()
   }
 
 }
