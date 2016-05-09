@@ -41,6 +41,16 @@ final public class DataController {
     }
   }()
 
+  public func withManagedObjectContext(closure: (NSManagedObjectContext) throws -> Void) throws {
+    try closure(managedObjectContext)
+    if managedObjectContext.hasChanges {
+      try managedObjectContext.save()
+      if let parentContext = managedObjectContext.parentContext where parentContext.hasChanges {
+        try parentContext.save()
+      }
+    }
+  }
+
 }
 
 // MARK: Private
