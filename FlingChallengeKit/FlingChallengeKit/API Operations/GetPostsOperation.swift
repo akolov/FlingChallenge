@@ -106,6 +106,8 @@ public final class GetPostsOperation: Operation {
                     try parentContext.save()
                   }
                 }
+
+                counter += 1
               }
             }
           }
