@@ -45,6 +45,12 @@ class RemoteImageView: UIImageView {
     }
   }
 
+  override var image: UIImage? {
+    didSet {
+      progressIndicator.hidden = image != nil
+    }
+  }
+
   private(set) lazy var progressIndicator: CircularProgressIndicator = {
     let progressIndicator = CircularProgressIndicator()
     progressIndicator.translatesAutoresizingMaskIntoConstraints = false

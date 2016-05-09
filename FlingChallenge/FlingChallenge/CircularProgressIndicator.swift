@@ -28,9 +28,6 @@ class CircularProgressIndicator: UIView {
       if progress >= 1.0 && hideWhenFinished {
         hidden = true
       }
-      else {
-        hidden = false
-      }
     }
   }
 
