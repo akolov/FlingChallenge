@@ -14,6 +14,7 @@ class PostsViewController: UICollectionViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    title = NSLocalizedString("My Feed", comment: "Feed view controller title")
     refreshPosts()
   }
 
