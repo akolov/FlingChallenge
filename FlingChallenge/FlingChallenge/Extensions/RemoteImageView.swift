@@ -29,12 +29,15 @@ class RemoteImageView: UIImageView {
 
   static let operationQueue: NSOperationQueue = {
     let queue = NSOperationQueue()
-    queue.maxConcurrentOperationCount = 3
+    queue.maxConcurrentOperationCount = 30
     return queue
   }()
 
   var imageID: Int64? {
     didSet {
+      cancelImageLoadingOperation()
+      image = nil
+
       if let imageID = imageID {
         let _operation = GetPostImageOperation(imageID: imageID)
         _operation.delegate = self
@@ -63,8 +66,7 @@ class RemoteImageView: UIImageView {
     operation?.cancel()
     operation?.delegate = nil
     operation = nil
-    image = nil
-    imageID = nil
+    progressIndicator.progress = 0
   }
 
 }
@@ -76,7 +78,9 @@ extension RemoteImageView: GetPostImageOperationDelegate {
   }
 
   func getPostImageOperation(operation: GetPostImageOperation, didFinishWithImage image: UIImage) {
-    self.image = image
+    if operation.imageID == imageID {
+      self.image = image
+    }
   }
 
   func getPostImageOperation(operation: GetPostImageOperation, didFailWithError error: ErrorType) {
