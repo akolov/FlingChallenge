@@ -13,7 +13,7 @@ class RemoteImageView: UIImageView {
 
   static let operationQueue: NSOperationQueue = {
     let queue = NSOperationQueue()
-    queue.qualityOfService = .UserInitiated
+    queue.maxConcurrentOperationCount = 3
     return queue
   }()
 
