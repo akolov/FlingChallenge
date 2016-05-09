@@ -42,10 +42,10 @@ class PostTests: XCTestCase {
       XCTAssertNotNil(post)
       XCTAssertNotNil(post.objectID.persistentStore)
       XCTAssertFalse(post.objectID.temporaryID)
-      XCTAssertEqual(post.identifier, object["ID"])
-      XCTAssertEqual(post.imageID, object["ImageID"])
+      XCTAssertEqual(post.identifier, try object.get("ID"))
+      XCTAssertEqual(post.imageID, try object.get("ImageID"))
       XCTAssertEqual(post.title, object["Title"])
-      XCTAssertEqual(post.userID, object["UserID"])
+      XCTAssertEqual(post.userID, try object.get("UserID"))
       XCTAssertEqual(post.userName, object["UserName"])
     }
     catch {
