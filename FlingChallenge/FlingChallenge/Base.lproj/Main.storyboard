@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Posts View Controller-->
+        <!--My Feed-->
         <scene sceneID="QyR-a4-9jX">
             <objects>
                 <collectionViewController id="iNe-WS-dvh" customClass="PostsViewController" customModule="FlingChallenge" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,28 +28,77 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kSm-Gb-PLt" customClass="RemoteImageView" customModule="FlingChallenge" customModuleProvider="target">
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="GY2-bz-plb">
                                             <rect key="frame" x="8" y="8" width="284" height="284"/>
-                                        </imageView>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kSm-Gb-PLt" customClass="RemoteImageView" customModule="FlingChallenge" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="284" height="235"/>
+                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wrh-DC-3MV">
+                                                    <rect key="frame" x="0.0" y="239" width="284" height="45"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jly-Lk-GBW">
+                                                            <rect key="frame" x="8" y="8" width="268" height="29"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xGB-Ad-17P">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="268" height="20"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="RQF-Do-13G"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="evL-ox-YAl" userLabel="Bottom separator">
+                                                                    <rect key="frame" x="0.0" y="28" width="268" height="1"/>
+                                                                    <color key="backgroundColor" white="0.5" alpha="0.5" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="1" id="0LU-oF-TYs"/>
+                                                                    </constraints>
+                                                                </view>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="jly-Lk-GBW" secondAttribute="bottom" id="DtC-HH-84X"/>
+                                                        <constraint firstItem="jly-Lk-GBW" firstAttribute="trailing" secondItem="wrh-DC-3MV" secondAttribute="trailingMargin" id="KTu-C3-Kke"/>
+                                                        <constraint firstItem="jly-Lk-GBW" firstAttribute="top" secondItem="wrh-DC-3MV" secondAttribute="topMargin" id="T0b-nW-E4N"/>
+                                                        <constraint firstItem="jly-Lk-GBW" firstAttribute="leading" secondItem="wrh-DC-3MV" secondAttribute="leadingMargin" id="YbQ-ZC-OUB"/>
+                                                    </constraints>
+                                                    <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wrh-DC-3MV" firstAttribute="bottom" secondItem="GY2-bz-plb" secondAttribute="bottomMargin" id="gSl-x2-umh"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="gSl-x2-umh"/>
+                                                </mask>
+                                            </variation>
+                                        </stackView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdB-pc-sQ8">
                                             <rect key="frame" x="16" y="16" width="268" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="kSm-Gb-PLt" firstAttribute="leading" secondItem="bo4-Td-ECU" secondAttribute="leadingMargin" id="BCo-oj-HEr"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="kSm-Gb-PLt" secondAttribute="bottom" id="BfX-br-UvF"/>
-                                    <constraint firstItem="kSm-Gb-PLt" firstAttribute="top" secondItem="bo4-Td-ECU" secondAttribute="topMargin" id="WOh-An-yfJ"/>
+                                    <constraint firstItem="GY2-bz-plb" firstAttribute="leading" secondItem="bo4-Td-ECU" secondAttribute="leadingMargin" id="05d-Am-z2F"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="GY2-bz-plb" secondAttribute="bottom" id="RWf-Co-eN4"/>
+                                    <constraint firstItem="GY2-bz-plb" firstAttribute="top" secondItem="bo4-Td-ECU" secondAttribute="topMargin" id="Xwl-82-jSI"/>
+                                    <constraint firstItem="GY2-bz-plb" firstAttribute="trailing" secondItem="bo4-Td-ECU" secondAttribute="trailingMargin" id="gzu-CZ-ghl"/>
                                     <constraint firstItem="YdB-pc-sQ8" firstAttribute="leading" secondItem="bo4-Td-ECU" secondAttribute="leadingMargin" constant="8" id="hE7-o7-sMk"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="YdB-pc-sQ8" secondAttribute="trailing" constant="8" id="jMj-cG-edv"/>
                                     <constraint firstItem="YdB-pc-sQ8" firstAttribute="top" secondItem="bo4-Td-ECU" secondAttribute="topMargin" constant="8" id="v6E-GB-RVR"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="kSm-Gb-PLt" secondAttribute="trailing" id="yrx-gg-nK7"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="authorLabel" destination="xGB-Ad-17P" id="VqN-yf-vO4"/>
+                                    <outlet property="bottomSeparatorHeightConstraint" destination="0LU-oF-TYs" id="j7h-Zs-i1R"/>
                                     <outlet property="imageView" destination="kSm-Gb-PLt" id="1Gh-9x-gGW"/>
                                     <outlet property="titleLabel" destination="YdB-pc-sQ8" id="yRx-xt-rCT"/>
                                 </connections>
@@ -60,7 +109,7 @@
                             <outlet property="delegate" destination="iNe-WS-dvh" id="nh0-jO-vhI"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="hZS-ZR-ElS"/>
+                    <navigationItem key="navigationItem" title="My Feed" id="hZS-ZR-ElS"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Zz-4T-mNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

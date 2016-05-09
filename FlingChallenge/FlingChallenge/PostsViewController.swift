@@ -18,6 +18,13 @@ class PostsViewController: UICollectionViewController {
     refreshPosts()
   }
 
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    if let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+      layout.itemSize = CGSize(width: view.bounds.width, height: view.bounds.width)
+    }
+  }
+
   // MARK: Internal methods
 
   func refreshPosts() {
@@ -96,10 +103,12 @@ extension PostsViewController {
                                                                      forIndexPath: indexPath) as! PostCollectionViewCell
     if let post = fetchedResultsController?.objectAtIndexPath(indexPath) as? Post {
       cell.titleLabel.text = post.title
+      cell.authorLabel.text = String(format: NSLocalizedString("by %@", comment: "Author label title"), post.userName)
       cell.imageView.imageID = post.imageID
     }
     else {
       cell.titleLabel.text = nil
+      cell.authorLabel.text = nil
       cell.imageView.imageID = nil
     }
 
