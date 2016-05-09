@@ -6,6 +6,7 @@
 //  Copyright © 2016 Alexander Kolov. All rights reserved.
 //
 
+import FlingChallengeKit
 import UIKit
 
 @UIApplicationMain
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    FlingChallengeKit.strictSSL = false
     return true
   }
 
