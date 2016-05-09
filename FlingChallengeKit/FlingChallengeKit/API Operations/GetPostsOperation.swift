@@ -18,6 +18,7 @@ public protocol GetPostsOperationDelegate: class {
 public final class GetPostsOperation: Operation {
 
   public weak var delegate: GetPostsOperationDelegate?
+  public var saveBatchSize = 20
 
   private(set) public var error: ErrorType? {
     didSet {
@@ -90,12 +91,22 @@ public final class GetPostsOperation: Operation {
           }
 
           try DataController().withManagedObjectContext { context in
+            var counter = 0
             for object in list {
               guard !self.cancelled else {
                 return
               }
 
               _ = try Post(managedObjectContext: context, representation: object)
+
+              if counter % self.saveBatchSize == 0 {
+                if context.hasChanges {
+                  try context.save()
+                  if let parentContext = context.parentContext where parentContext.hasChanges {
+                    try parentContext.save()
+                  }
+                }
+              }
             }
           }
         }
