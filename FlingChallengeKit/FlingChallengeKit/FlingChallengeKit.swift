@@ -11,6 +11,7 @@ import Foundation
 struct FlingChallengeKit {
 
   static var secure = true
+  static var strictSSL = true
   static var apiHost = "challenge.superfling.com"
 
   static var baseURL: NSURL {

@@ -33,6 +33,7 @@
 		FAC6B6131CDFCB3D007C1F9D /* DispatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6121CDFCB3D007C1F9D /* DispatchTests.swift */; };
 		FAC6B6151CDFD570007C1F9D /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6141CDFD570007C1F9D /* DataControllerTests.swift */; };
 		FAC6B61E1CDFE708007C1F9D /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B61D1CDFE708007C1F9D /* Operation.swift */; };
+		FAC6B6201CDFE9C1007C1F9D /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B61F1CDFE9C1007C1F9D /* SessionManager.swift */; };
 		FAC6B6221CDFEB54007C1F9D /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6211CDFEB54007C1F9D /* Endpoints.swift */; };
 		FAC6B6241CDFECC6007C1F9D /* FlingChallengeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6231CDFECC6007C1F9D /* FlingChallengeKit.swift */; };
 		FAC6B6281CDFF1AF007C1F9D /* EndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */; };
@@ -66,6 +67,7 @@
 		FAC6B6121CDFCB3D007C1F9D /* DispatchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchTests.swift; sourceTree = "<group>"; };
 		FAC6B6141CDFD570007C1F9D /* DataControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataControllerTests.swift; sourceTree = "<group>"; };
 		FAC6B61D1CDFE708007C1F9D /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
+		FAC6B61F1CDFE9C1007C1F9D /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		FAC6B6211CDFEB54007C1F9D /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		FAC6B6231CDFECC6007C1F9D /* FlingChallengeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlingChallengeKit.swift; sourceTree = "<group>"; };
 		FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsTests.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				FAC6B6211CDFEB54007C1F9D /* Endpoints.swift */,
 				FAC6B60D1CDFB830007C1F9D /* FlingChallengeError.swift */,
 				FAC6B6231CDFECC6007C1F9D /* FlingChallengeKit.swift */,
+				FAC6B61F1CDFE9C1007C1F9D /* SessionManager.swift */,
 				FAC6B6021CDF9C82007C1F9D /* Fling.xcdatamodeld */,
 				FA1CA7311CDF942C0036CAA4 /* Info.plist */,
 			);
@@ -321,6 +324,7 @@
 				FAC6B6241CDFECC6007C1F9D /* FlingChallengeKit.swift in Sources */,
 				FAC6B60A1CDF9D90007C1F9D /* Post.swift in Sources */,
 				FAC6B6111CDFC5D1007C1F9D /* Dispatch.swift in Sources */,
+				FAC6B6201CDFE9C1007C1F9D /* SessionManager.swift in Sources */,
 				FAC6B60E1CDFB830007C1F9D /* FlingChallengeError.swift in Sources */,
 				FAC6B62A1CE00589007C1F9D /* Dictionary.swift in Sources */,
 				FAC6B6221CDFEB54007C1F9D /* Endpoints.swift in Sources */,
