@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		FA1CA7471CDF972F0036CAA4 /* FlingChallengeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1CA7461CDF972F0036CAA4 /* FlingChallengeKit.framework */; };
 		FA1CA7481CDF972F0036CAA4 /* FlingChallengeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA1CA7461CDF972F0036CAA4 /* FlingChallengeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA8418E71CE0728400BEC396 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8418E61CE0728400BEC396 /* Alerts.swift */; };
 		FAC96C701CDF4FDE008FAE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC96C6F1CDF4FDE008FAE92 /* AppDelegate.swift */; };
-		FAC96C721CDF4FDE008FAE92 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC96C711CDF4FDE008FAE92 /* ViewController.swift */; };
+		FAC96C721CDF4FDE008FAE92 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC96C711CDF4FDE008FAE92 /* PostsViewController.swift */; };
 		FAC96C751CDF4FDE008FAE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC96C731CDF4FDE008FAE92 /* Main.storyboard */; };
 		FAC96C781CDF4FDE008FAE92 /* FlingChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAC96C761CDF4FDE008FAE92 /* FlingChallenge.xcdatamodeld */; };
 		FAC96C7A1CDF4FDE008FAE92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAC96C791CDF4FDE008FAE92 /* Assets.xcassets */; };
@@ -52,9 +53,10 @@
 
 /* Begin PBXFileReference section */
 		FA1CA7461CDF972F0036CAA4 /* FlingChallengeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = FlingChallengeKit.framework; path = "/Users/alex/Library/Developer/Xcode/DerivedData/FlingChallenge-ggmpzohvtlbrsgbennxqsokqchsn/Build/Products/Debug-iphonesimulator/FlingChallengeKit.framework"; sourceTree = "<absolute>"; };
+		FA8418E61CE0728400BEC396 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		FAC96C6C1CDF4FDE008FAE92 /* FlingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC96C6F1CDF4FDE008FAE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FAC96C711CDF4FDE008FAE92 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAC96C711CDF4FDE008FAE92 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		FAC96C741CDF4FDE008FAE92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAC96C771CDF4FDE008FAE92 /* FlingChallenge.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlingChallenge.xcdatamodel; sourceTree = "<group>"; };
 		FAC96C791CDF4FDE008FAE92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,7 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				FAC96C6F1CDF4FDE008FAE92 /* AppDelegate.swift */,
-				FAC96C711CDF4FDE008FAE92 /* ViewController.swift */,
+				FA8418E61CE0728400BEC396 /* Alerts.swift */,
+				FAC96C711CDF4FDE008FAE92 /* PostsViewController.swift */,
 				FAC96C731CDF4FDE008FAE92 /* Main.storyboard */,
 				FAC96C791CDF4FDE008FAE92 /* Assets.xcassets */,
 				FAC96C7B1CDF4FDE008FAE92 /* LaunchScreen.storyboard */,
@@ -306,7 +309,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC96C781CDF4FDE008FAE92 /* FlingChallenge.xcdatamodeld in Sources */,
-				FAC96C721CDF4FDE008FAE92 /* ViewController.swift in Sources */,
+				FAC96C721CDF4FDE008FAE92 /* PostsViewController.swift in Sources */,
+				FA8418E71CE0728400BEC396 /* Alerts.swift in Sources */,
 				FAC96C701CDF4FDE008FAE92 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
