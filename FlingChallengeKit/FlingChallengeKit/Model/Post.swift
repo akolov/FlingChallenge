@@ -20,6 +20,7 @@ public class Post: _Post {
     var object = try context.executeFetchRequest(request).first as? Post
     if object == nil {
       object = Post(managedObjectContext: context)
+      object?.identifier = identifier
     }
 
     if let object = object {
