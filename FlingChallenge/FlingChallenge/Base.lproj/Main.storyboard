@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Posts View Controller-->
@@ -12,6 +13,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="hTd-AF-aO1">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="oF3-Vn-hx0">
                             <size key="itemSize" width="300" height="300"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -19,14 +21,38 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCollectionViewCell" id="bo4-Td-ECU">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCollectionViewCell" id="bo4-Td-ECU" customClass="PostCollectionViewCell" customModule="FlingChallenge" customModuleProvider="target">
                                 <rect key="frame" x="150" y="64" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kSm-Gb-PLt">
+                                            <rect key="frame" x="8" y="8" width="284" height="284"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdB-pc-sQ8">
+                                            <rect key="frame" x="16" y="16" width="268" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="kSm-Gb-PLt" firstAttribute="leading" secondItem="bo4-Td-ECU" secondAttribute="leadingMargin" id="BCo-oj-HEr"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="kSm-Gb-PLt" secondAttribute="bottom" id="BfX-br-UvF"/>
+                                    <constraint firstItem="kSm-Gb-PLt" firstAttribute="top" secondItem="bo4-Td-ECU" secondAttribute="topMargin" id="WOh-An-yfJ"/>
+                                    <constraint firstItem="YdB-pc-sQ8" firstAttribute="leading" secondItem="bo4-Td-ECU" secondAttribute="leadingMargin" constant="8" id="hE7-o7-sMk"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="YdB-pc-sQ8" secondAttribute="trailing" constant="8" id="jMj-cG-edv"/>
+                                    <constraint firstItem="YdB-pc-sQ8" firstAttribute="top" secondItem="bo4-Td-ECU" secondAttribute="topMargin" constant="8" id="v6E-GB-RVR"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="kSm-Gb-PLt" secondAttribute="trailing" id="yrx-gg-nK7"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="kSm-Gb-PLt" id="1Gh-9x-gGW"/>
+                                    <outlet property="titleLabel" destination="YdB-pc-sQ8" id="yRx-xt-rCT"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

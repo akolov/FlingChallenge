@@ -89,7 +89,15 @@ extension PostsViewController {
 
   override func collectionView(collectionView: UICollectionView,
                                cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PostCollectionViewCell", forIndexPath: indexPath)
+    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PostCollectionViewCell",
+                                                                     forIndexPath: indexPath) as! PostCollectionViewCell
+    if let post = fetchedResultsController?.objectAtIndexPath(indexPath) {
+      cell.titleLabel.text = post.title
+    }
+    else {
+      cell.titleLabel.text = nil
+    }
+
     return cell
   }
 
