@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA1CA7471CDF972F0036CAA4 /* FlingChallengeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1CA7461CDF972F0036CAA4 /* FlingChallengeKit.framework */; };
-		FA1CA7481CDF972F0036CAA4 /* FlingChallengeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA1CA7461CDF972F0036CAA4 /* FlingChallengeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FA8418E71CE0728400BEC396 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8418E61CE0728400BEC396 /* Alerts.swift */; };
 		FA8418E91CE0780400BEC396 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8418E81CE0780400BEC396 /* PostCollectionViewCell.swift */; };
 		FA8418EC1CE08FF900BEC396 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8418EB1CE08FF900BEC396 /* RemoteImageView.swift */; };
@@ -19,6 +17,8 @@
 		FAC96C7D1CDF4FDE008FAE92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAC96C7B1CDF4FDE008FAE92 /* LaunchScreen.storyboard */; };
 		FAC96C881CDF4FDE008FAE92 /* FlingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC96C871CDF4FDE008FAE92 /* FlingChallengeTests.swift */; };
 		FAC96C931CDF4FDE008FAE92 /* FlingChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC96C921CDF4FDE008FAE92 /* FlingChallengeUITests.swift */; };
+		FADBD5631CE0E6B600942375 /* FlingChallengeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADBD55E1CE0E69E00942375 /* FlingChallengeKit.framework */; };
+		FADBD5641CE0E6B600942375 /* FlingChallengeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FADBD55E1CE0E69E00942375 /* FlingChallengeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,16 +36,44 @@
 			remoteGlobalIDString = FAC96C6B1CDF4FDE008FAE92;
 			remoteInfo = FlingChallenge;
 		};
+		FADBD55D1CE0E69E00942375 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FADBD5571CE0E69E00942375 /* FlingChallengeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA1CA72C1CDF942C0036CAA4;
+			remoteInfo = FlingChallengeKit;
+		};
+		FADBD55F1CE0E69E00942375 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FADBD5571CE0E69E00942375 /* FlingChallengeKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FA1CA7361CDF942C0036CAA4;
+			remoteInfo = FlingChallengeKitTests;
+		};
+		FADBD5611CE0E6A700942375 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FADBD5571CE0E69E00942375 /* FlingChallengeKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FA1CA72B1CDF942C0036CAA4;
+			remoteInfo = FlingChallengeKit;
+		};
+		FADBD5651CE0E6B600942375 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FADBD5571CE0E69E00942375 /* FlingChallengeKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = FA1CA72B1CDF942C0036CAA4;
+			remoteInfo = FlingChallengeKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FA1CA7201CDF57090036CAA4 /* Embed Frameworks */ = {
+		FADBD5671CE0E6B600942375 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FA1CA7481CDF972F0036CAA4 /* FlingChallengeKit.framework in Embed Frameworks */,
+				FADBD5641CE0E6B600942375 /* FlingChallengeKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,7 +81,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FA1CA7461CDF972F0036CAA4 /* FlingChallengeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = FlingChallengeKit.framework; path = "/Users/alex/Library/Developer/Xcode/DerivedData/FlingChallenge-ggmpzohvtlbrsgbennxqsokqchsn/Build/Products/Debug-iphonesimulator/FlingChallengeKit.framework"; sourceTree = "<absolute>"; };
 		FA8418E61CE0728400BEC396 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		FA8418E81CE0780400BEC396 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA8418EB1CE08FF900BEC396 /* RemoteImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
@@ -70,6 +97,7 @@
 		FAC96C8E1CDF4FDE008FAE92 /* FlingChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlingChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC96C921CDF4FDE008FAE92 /* FlingChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlingChallengeUITests.swift; sourceTree = "<group>"; };
 		FAC96C941CDF4FDE008FAE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FADBD5571CE0E69E00942375 /* FlingChallengeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FlingChallengeKit.xcodeproj; path = ../FlingChallengeKit/FlingChallengeKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA1CA7471CDF972F0036CAA4 /* FlingChallengeKit.framework in Frameworks */,
+				FADBD5631CE0E6B600942375 /* FlingChallengeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +129,7 @@
 		FA1CA7491CDF97D00036CAA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FA1CA7461CDF972F0036CAA4 /* FlingChallengeKit.framework */,
+				FADBD5571CE0E69E00942375 /* FlingChallengeKit.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -169,6 +197,15 @@
 			path = FlingChallengeUITests;
 			sourceTree = "<group>";
 		};
+		FADBD5581CE0E69E00942375 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FADBD55E1CE0E69E00942375 /* FlingChallengeKit.framework */,
+				FADBD5601CE0E69E00942375 /* FlingChallengeKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,11 +217,13 @@
 				FAC96C681CDF4FDE008FAE92 /* Sources */,
 				FAC96C691CDF4FDE008FAE92 /* Frameworks */,
 				FAC96C6A1CDF4FDE008FAE92 /* Resources */,
-				FA1CA7201CDF57090036CAA4 /* Embed Frameworks */,
+				FADBD5671CE0E6B600942375 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FADBD5621CE0E6A700942375 /* PBXTargetDependency */,
+				FADBD5661CE0E6B600942375 /* PBXTargetDependency */,
 			);
 			name = FlingChallenge;
 			productName = FlingChallenge;
@@ -261,6 +300,12 @@
 			mainGroup = FAC96C631CDF4FDE008FAE92;
 			productRefGroup = FAC96C6D1CDF4FDE008FAE92 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FADBD5581CE0E69E00942375 /* Products */;
+					ProjectRef = FADBD5571CE0E69E00942375 /* FlingChallengeKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FAC96C6B1CDF4FDE008FAE92 /* FlingChallenge */,
@@ -269,6 +314,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FADBD55E1CE0E69E00942375 /* FlingChallengeKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = FlingChallengeKit.framework;
+			remoteRef = FADBD55D1CE0E69E00942375 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FADBD5601CE0E69E00942375 /* FlingChallengeKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = FlingChallengeKitTests.xctest;
+			remoteRef = FADBD55F1CE0E69E00942375 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FAC96C6A1CDF4FDE008FAE92 /* Resources */ = {
@@ -355,6 +417,16 @@
 			isa = PBXTargetDependency;
 			target = FAC96C6B1CDF4FDE008FAE92 /* FlingChallenge */;
 			targetProxy = FAC96C8F1CDF4FDE008FAE92 /* PBXContainerItemProxy */;
+		};
+		FADBD5621CE0E6A700942375 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FlingChallengeKit;
+			targetProxy = FADBD5611CE0E6A700942375 /* PBXContainerItemProxy */;
+		};
+		FADBD5661CE0E6B600942375 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FlingChallengeKit;
+			targetProxy = FADBD5651CE0E6B600942375 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -467,7 +539,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = FlingChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexkolov.FlingChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -478,7 +552,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = FlingChallenge/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexkolov.FlingChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
