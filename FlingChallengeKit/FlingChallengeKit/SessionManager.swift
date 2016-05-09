@@ -16,6 +16,13 @@ public final class SessionManager: NSObject {
     return session
   }()
 
+  public static let downloaderSession: NSURLSession = {
+    let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+    configuration.URLCache = downloaderCache
+    let session = NSURLSession(configuration: configuration, delegate: delegate, delegateQueue: nil)
+    return session
+  }()
+
 }
 
 private extension SessionManager {
@@ -45,5 +52,8 @@ private extension SessionManager {
   }
 
   private static let delegate = Delegate()
+  private static let downloaderCache = NSURLCache(memoryCapacity: 0,
+                                                  diskCapacity: 100 * 1024 * 1024,
+                                                  diskPath: "downloads")
 
 }

@@ -40,6 +40,9 @@
 		FAC6B6281CDFF1AF007C1F9D /* EndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */; };
 		FAC6B62A1CE00589007C1F9D /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6291CE00589007C1F9D /* Dictionary.swift */; };
 		FAC6B62E1CE009D9007C1F9D /* PostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B62D1CE009D9007C1F9D /* PostTests.swift */; };
+		FAC6B6301CE019C9007C1F9D /* GetPostImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B62F1CE019C9007C1F9D /* GetPostImageOperation.swift */; };
+		FAC6B6321CE01FF8007C1F9D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6311CE01FF8007C1F9D /* UIImage.swift */; };
+		FAC6B6341CE025AB007C1F9D /* PostImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6331CE025AB007C1F9D /* PostImageTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +78,9 @@
 		FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsTests.swift; sourceTree = "<group>"; };
 		FAC6B6291CE00589007C1F9D /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		FAC6B62D1CE009D9007C1F9D /* PostTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
+		FAC6B62F1CE019C9007C1F9D /* GetPostImageOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPostImageOperation.swift; sourceTree = "<group>"; };
+		FAC6B6311CE01FF8007C1F9D /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		FAC6B6331CE025AB007C1F9D /* PostImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +145,9 @@
 				FAC6B6141CDFD570007C1F9D /* DataControllerTests.swift */,
 				FAC6B6121CDFCB3D007C1F9D /* DispatchTests.swift */,
 				FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */,
-				FA1CA73D1CDF942C0036CAA4 /* Info.plist */,
 				FAC6B62D1CE009D9007C1F9D /* PostTests.swift */,
+				FAC6B6331CE025AB007C1F9D /* PostImageTests.swift */,
+				FA1CA73D1CDF942C0036CAA4 /* Info.plist */,
 			);
 			path = FlingChallengeKitTests;
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 			children = (
 				FAC6B6101CDFC5D1007C1F9D /* Dispatch.swift */,
 				FAC6B6291CE00589007C1F9D /* Dictionary.swift */,
+				FAC6B6311CE01FF8007C1F9D /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 		FAC6B61A1CDFE636007C1F9D /* API Operations */ = {
 			isa = PBXGroup;
 			children = (
+				FAC6B62F1CE019C9007C1F9D /* GetPostImageOperation.swift */,
 				FAC6B61B1CDFE649007C1F9D /* GetPostsOperation.swift */,
 				FAC6B61D1CDFE708007C1F9D /* Operation.swift */,
 			);
@@ -334,6 +343,8 @@
 				FAC6B61E1CDFE708007C1F9D /* Operation.swift in Sources */,
 				FAC6B60C1CDFAF42007C1F9D /* DataController.swift in Sources */,
 				FAC6B61C1CDFE649007C1F9D /* GetPostsOperation.swift in Sources */,
+				FAC6B6321CE01FF8007C1F9D /* UIImage.swift in Sources */,
+				FAC6B6301CE019C9007C1F9D /* GetPostImageOperation.swift in Sources */,
 				FAC6B6041CDF9C82007C1F9D /* Fling.xcdatamodeld in Sources */,
 				FAC6B6091CDF9D90007C1F9D /* _Post.swift in Sources */,
 			);
@@ -344,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1CA73C1CDF942C0036CAA4 /* FlingChallengeKitTests.swift in Sources */,
+				FAC6B6341CE025AB007C1F9D /* PostImageTests.swift in Sources */,
 				FAC6B6151CDFD570007C1F9D /* DataControllerTests.swift in Sources */,
 				FAC6B6281CDFF1AF007C1F9D /* EndpointsTests.swift in Sources */,
 				FAC6B6131CDFCB3D007C1F9D /* DispatchTests.swift in Sources */,
