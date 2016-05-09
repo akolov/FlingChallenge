@@ -15,6 +15,7 @@ class PostsViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     title = NSLocalizedString("My Feed", comment: "Feed view controller title")
+    collectionView?.addSubview(refreshControl)
     refreshPosts()
   }
 
@@ -25,6 +26,22 @@ class PostsViewController: UICollectionViewController {
     }
   }
 
+  // MARK: Actions
+
+  func refreshControlDidChangeValue(sender: UIRefreshControl) {
+    refreshPosts()
+  }
+
+  // MARK: Outlets
+
+  lazy var refreshControl: UIRefreshControl = {
+    let refreshControl = UIRefreshControl()
+    refreshControl.addTarget(self,
+                             action: #selector(self.refreshControlDidChangeValue(_:)),
+                             forControlEvents: .ValueChanged)
+    return refreshControl
+  }()
+
   // MARK: Internal methods
 
   func refreshPosts() {
@@ -34,7 +51,14 @@ class PostsViewController: UICollectionViewController {
 
     let operation = GetPostsOperation()
     operation.saveBatchSize = dataBatchSize
+    operation.completionBlock = { [unowned self] in
+      dispatch_async(dispatch_get_main_queue()) {
+        self.refreshControl.endRefreshing()
+      }
+    }
+
     operationQueue.addOperation(operation)
+    refreshControl.beginRefreshing()
   }
 
   // MARK: Properties
