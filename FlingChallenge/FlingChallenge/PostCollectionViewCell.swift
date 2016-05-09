@@ -39,4 +39,15 @@ class PostCollectionViewCell: UICollectionViewCell {
     imageView.cancelImageLoadingOperation()
   }
 
+  override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+    switch (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass) {
+    case (.Compact, .Regular):
+      imageView.layer.cornerRadius = 0
+      imageView.layer.masksToBounds = false
+    default:
+      imageView.layer.cornerRadius = 3
+      imageView.layer.masksToBounds = true
+    }
+  }
+
 }
