@@ -16,11 +16,10 @@ class FlingChallengeUITests: XCTestCase {
     XCUIApplication().launch()
   }
 
-  override func tearDown() {
-    super.tearDown()
-  }
-
-  func testExample() {
+  func testShowsContent() {
+    let app = XCUIApplication()
+    let collectionView = app.collectionViews
+    XCTAssert(collectionView.cells.count > 0)
   }
 
 }
