@@ -22,7 +22,16 @@ class PostsViewController: UICollectionViewController {
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
     if let layout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-      layout.itemSize = CGSize(width: view.bounds.width, height: view.bounds.width)
+      switch (traitCollection.horizontalSizeClass, traitCollection.verticalSizeClass) {
+      case (.Compact, .Regular):
+        layout.itemSize = CGSize(width: view.bounds.width, height: view.bounds.width)
+        layout.sectionInset = UIEdgeInsetsZero
+      default:
+        let spacing = layout.minimumInteritemSpacing
+        let width = (view.bounds.width - spacing * 3) / 2
+        layout.itemSize = CGSize(width: width, height: width)
+        layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+      }
     }
   }
 
