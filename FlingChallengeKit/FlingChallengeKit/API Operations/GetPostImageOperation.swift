@@ -10,6 +10,7 @@ import Foundation
 
 public protocol GetPostImageOperationDelegate: class {
 
+  func getPostImageOperation(operation: GetPostImageOperation, didUpdateProgress progress: Float)
   func getPostImageOperation(operation: GetPostImageOperation, didFinishWithImage image: UIImage)
   func getPostImageOperation(operation: GetPostImageOperation, didFailWithError error: ErrorType)
 
@@ -152,11 +153,14 @@ extension GetPostImageOperation: NSURLSessionDelegate {
 extension GetPostImageOperation: NSURLSessionDownloadDelegate {
 
   public func URLSession(session: NSURLSession,
-                  downloadTask: NSURLSessionDownloadTask,
-                  didWriteData bytesWritten: Int64,
-                  totalBytesWritten: Int64,
-                  totalBytesExpectedToWrite: Int64) {
-
+                         downloadTask: NSURLSessionDownloadTask,
+                         didWriteData bytesWritten: Int64,
+                         totalBytesWritten: Int64,
+                         totalBytesExpectedToWrite: Int64) {
+    dispatch_async(dispatch_get_main_queue()) {
+      let progress = Float(Double(totalBytesWritten) / Double(totalBytesExpectedToWrite))
+      self.delegate?.getPostImageOperation(self, didUpdateProgress: progress)
+    }
   }
 
   public func URLSession(session: NSURLSession,
