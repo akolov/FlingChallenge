@@ -59,7 +59,15 @@ public final class GetPostImageOperation: Operation {
   // MARK: Public
 
   private(set) public var imageID: Int64
-  private(set) public var image: UIImage?
+  private(set) public var image: UIImage? {
+    didSet {
+      if let image = image where !cancelled && error == nil {
+        dispatch_async(dispatch_get_main_queue()) {
+          self.delegate?.getPostImageOperation(self, didFinishWithImage: image)
+        }
+      }
+    }
+  }
 
   public weak var delegate: GetPostImageOperationDelegate?
 
@@ -71,16 +79,6 @@ public final class GetPostImageOperation: Operation {
 
       dispatch_async(dispatch_get_main_queue()) {
         self.delegate?.getPostImageOperation(self, didFailWithError: error)
-      }
-    }
-  }
-
-  public override var state: State {
-    didSet {
-      if let image = image where state == .Finished && error == nil {
-        dispatch_async(dispatch_get_main_queue()) {
-          self.delegate?.getPostImageOperation(self, didFinishWithImage: image)
-        }
       }
     }
   }
