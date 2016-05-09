@@ -94,7 +94,7 @@ extension PostsViewController {
                                cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PostCollectionViewCell",
                                                                      forIndexPath: indexPath) as! PostCollectionViewCell
-    if let post = fetchedResultsController?.objectAtIndexPath(indexPath) {
+    if let post = fetchedResultsController?.objectAtIndexPath(indexPath) as? Post {
       cell.titleLabel.text = post.title
       cell.imageView.imageID = post.imageID
     }
