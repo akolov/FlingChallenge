@@ -7,16 +7,18 @@
 //
 
 @testable import FlingChallengeKit
+import CoreData
 import XCTest
 
 class PostTests: XCTestCase {
 
   override class func setUp() {
     super.setUp()
+    FlingChallengeKit.strictSSL = false
     _ = try? DataController().destroyPersistentStore()
   }
 
-  override class func tearDown() {
+  override func tearDown() {
     _ = try? DataController().destroyPersistentStore()
     super.tearDown()
   }
@@ -45,6 +47,39 @@ class PostTests: XCTestCase {
       XCTAssertEqual(post.title, object["Title"])
       XCTAssertEqual(post.userID, object["UserID"])
       XCTAssertEqual(post.userName, object["UserName"])
+    }
+    catch {
+      XCTFail()
+    }
+  }
+
+  func testPostDownload() {
+    let queue = NSOperationQueue()
+    queue.qualityOfService = .UserInitiated
+
+    let expectation = expectationWithDescription("GetPostsOperation has completed")
+
+    let operation = GetPostsOperation()
+    operation.completionBlock = { [unowned operation] in
+      XCTAssertNil(operation.error)
+      expectation.fulfill()
+    }
+
+    queue.addOperation(operation)
+
+    waitForExpectationsWithTimeout(10, handler: nil)
+
+    do {
+      let fetchRequest = NSFetchRequest(entityName: Post.entityName())
+      let count = try DataController().managedObjectContext.countForFetchRequest(fetchRequest, error: nil)
+
+      if count == NSNotFound {
+        XCTFail()
+      }
+
+      if count == 0 {
+        XCTFail()
+      }
     }
     catch {
       XCTFail()

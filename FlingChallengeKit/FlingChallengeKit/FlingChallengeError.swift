@@ -12,6 +12,7 @@ enum FlingChallengeError: ErrorType {
 
   case InitializationError(description: String)
   case ConfigurationError(description: String)
+  case APIError(description: String)
   case DeserializationError(description: String)
 
 }

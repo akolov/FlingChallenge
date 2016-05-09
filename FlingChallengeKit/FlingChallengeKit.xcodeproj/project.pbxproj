@@ -32,6 +32,7 @@
 		FAC6B6111CDFC5D1007C1F9D /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6101CDFC5D1007C1F9D /* Dispatch.swift */; };
 		FAC6B6131CDFCB3D007C1F9D /* DispatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6121CDFCB3D007C1F9D /* DispatchTests.swift */; };
 		FAC6B6151CDFD570007C1F9D /* DataControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6141CDFD570007C1F9D /* DataControllerTests.swift */; };
+		FAC6B61C1CDFE649007C1F9D /* GetPostsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B61B1CDFE649007C1F9D /* GetPostsOperation.swift */; };
 		FAC6B61E1CDFE708007C1F9D /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B61D1CDFE708007C1F9D /* Operation.swift */; };
 		FAC6B6201CDFE9C1007C1F9D /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B61F1CDFE9C1007C1F9D /* SessionManager.swift */; };
 		FAC6B6221CDFEB54007C1F9D /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6211CDFEB54007C1F9D /* Endpoints.swift */; };
@@ -66,6 +67,7 @@
 		FAC6B6101CDFC5D1007C1F9D /* Dispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
 		FAC6B6121CDFCB3D007C1F9D /* DispatchTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchTests.swift; sourceTree = "<group>"; };
 		FAC6B6141CDFD570007C1F9D /* DataControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataControllerTests.swift; sourceTree = "<group>"; };
+		FAC6B61B1CDFE649007C1F9D /* GetPostsOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPostsOperation.swift; sourceTree = "<group>"; };
 		FAC6B61D1CDFE708007C1F9D /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		FAC6B61F1CDFE9C1007C1F9D /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		FAC6B6211CDFEB54007C1F9D /* Endpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		FAC6B61A1CDFE636007C1F9D /* API Operations */ = {
 			isa = PBXGroup;
 			children = (
+				FAC6B61B1CDFE649007C1F9D /* GetPostsOperation.swift */,
 				FAC6B61D1CDFE708007C1F9D /* Operation.swift */,
 			);
 			path = "API Operations";
@@ -330,6 +333,7 @@
 				FAC6B6221CDFEB54007C1F9D /* Endpoints.swift in Sources */,
 				FAC6B61E1CDFE708007C1F9D /* Operation.swift in Sources */,
 				FAC6B60C1CDFAF42007C1F9D /* DataController.swift in Sources */,
+				FAC6B61C1CDFE649007C1F9D /* GetPostsOperation.swift in Sources */,
 				FAC6B6041CDF9C82007C1F9D /* Fling.xcdatamodeld in Sources */,
 				FAC6B6091CDF9D90007C1F9D /* _Post.swift in Sources */,
 			);
