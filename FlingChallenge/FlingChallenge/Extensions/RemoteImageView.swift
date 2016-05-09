@@ -11,6 +11,22 @@ import UIKit
 
 class RemoteImageView: UIImageView {
 
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+    initialize()
+  }
+
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+    initialize()
+  }
+
+  private func initialize() {
+    self.addSubview(progressIndicator)
+    progressIndicator.centerXAnchor.constraintEqualToAnchor(centerXAnchor).active = true
+    progressIndicator.centerYAnchor.constraintEqualToAnchor(centerYAnchor).active = true
+  }
+
   static let operationQueue: NSOperationQueue = {
     let queue = NSOperationQueue()
     queue.maxConcurrentOperationCount = 3
@@ -29,6 +45,12 @@ class RemoteImageView: UIImageView {
     }
   }
 
+  private(set) lazy var progressIndicator: CircularProgressIndicator = {
+    let progressIndicator = CircularProgressIndicator()
+    progressIndicator.translatesAutoresizingMaskIntoConstraints = false
+    return progressIndicator
+  }()
+
   private weak var operation: GetPostImageOperation?
 
   func cancelImageLoadingOperation() {
@@ -42,6 +64,10 @@ class RemoteImageView: UIImageView {
 }
 
 extension RemoteImageView: GetPostImageOperationDelegate {
+
+  func getPostImageOperation(operation: GetPostImageOperation, didUpdateProgress progress: Float) {
+    progressIndicator.progress = progress
+  }
 
   func getPostImageOperation(operation: GetPostImageOperation, didFinishWithImage image: UIImage) {
     self.image = image

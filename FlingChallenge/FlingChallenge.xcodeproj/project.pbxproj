@@ -19,6 +19,7 @@
 		FAC96C931CDF4FDE008FAE92 /* FlingChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC96C921CDF4FDE008FAE92 /* FlingChallengeUITests.swift */; };
 		FADBD5631CE0E6B600942375 /* FlingChallengeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADBD55E1CE0E69E00942375 /* FlingChallengeKit.framework */; };
 		FADBD5641CE0E6B600942375 /* FlingChallengeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FADBD55E1CE0E69E00942375 /* FlingChallengeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FADBD56D1CE100B000942375 /* CircularProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADBD56C1CE100B000942375 /* CircularProgressIndicator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		FAC96C921CDF4FDE008FAE92 /* FlingChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlingChallengeUITests.swift; sourceTree = "<group>"; };
 		FAC96C941CDF4FDE008FAE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FADBD5571CE0E69E00942375 /* FlingChallengeKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FlingChallengeKit.xcodeproj; path = ../FlingChallengeKit/FlingChallengeKit.xcodeproj; sourceTree = "<group>"; };
+		FADBD56C1CE100B000942375 /* CircularProgressIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressIndicator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				FA8418E61CE0728400BEC396 /* Alerts.swift */,
 				FAC96C711CDF4FDE008FAE92 /* PostsViewController.swift */,
 				FA8418E81CE0780400BEC396 /* PostCollectionViewCell.swift */,
+				FADBD56C1CE100B000942375 /* CircularProgressIndicator.swift */,
 				FAC96C7B1CDF4FDE008FAE92 /* LaunchScreen.storyboard */,
 				FAC96C731CDF4FDE008FAE92 /* Main.storyboard */,
 				FAC96C791CDF4FDE008FAE92 /* Assets.xcassets */,
@@ -382,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8418E91CE0780400BEC396 /* PostCollectionViewCell.swift in Sources */,
+				FADBD56D1CE100B000942375 /* CircularProgressIndicator.swift in Sources */,
 				FAC96C721CDF4FDE008FAE92 /* PostsViewController.swift in Sources */,
 				FA8418E71CE0728400BEC396 /* Alerts.swift in Sources */,
 				FA8418EC1CE08FF900BEC396 /* RemoteImageView.swift in Sources */,
