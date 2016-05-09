@@ -50,6 +50,7 @@ class PostsViewController: UICollectionViewController {
     }
 
     let operation = GetPostsOperation()
+    operation.delegate = self
     operation.saveBatchSize = dataBatchSize
     operation.completionBlock = { [unowned self] in
       dispatch_async(dispatch_get_main_queue()) {
@@ -136,6 +137,18 @@ extension PostsViewController {
     }
 
     return cell
+  }
+
+}
+
+extension PostsViewController: GetPostsOperationDelegate {
+
+  func getPostsOperationDidFinish(operation: GetPostsOperation) {
+
+  }
+
+  func getPostsOperation(operation: GetPostsOperation, didFailWithError error: ErrorType) {
+    print(error)
   }
 
 }
