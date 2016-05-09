@@ -106,14 +106,93 @@ class PostsViewController: UICollectionViewController {
     return nil
   }()
 
+  private var sectionBlockOperation: NSBlockOperation?
+  private var objectBlockOperation: NSBlockOperation?
+
 }
 
 // MARK: NSFetchedResultsControllerDelegate
 
 extension PostsViewController: NSFetchedResultsControllerDelegate {
 
+  func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    sectionBlockOperation = NSBlockOperation()
+    objectBlockOperation = NSBlockOperation()
+  }
+
+  func controller(controller: NSFetchedResultsController,
+                  didChangeSection sectionInfo: NSFetchedResultsSectionInfo,
+                  atIndex sectionIndex: Int,
+                  forChangeType type: NSFetchedResultsChangeType) {
+    switch type {
+    case .Insert:
+      sectionBlockOperation?.addExecutionBlock { [weak self] in
+        dispatch_async(dispatch_get_main_queue()) {
+          self?.collectionView?.insertSections(NSIndexSet(index: sectionIndex))
+        }
+      }
+
+    case .Delete:
+      sectionBlockOperation?.addExecutionBlock { [weak self] in
+        dispatch_async(dispatch_get_main_queue()) {
+          self?.collectionView?.deleteSections(NSIndexSet(index: sectionIndex))
+        }
+      }
+
+    default:
+      break
+    }
+  }
+
+  func controller(controller: NSFetchedResultsController,
+                  didChangeObject anObject: AnyObject,
+                  atIndexPath indexPath: NSIndexPath?,
+                  forChangeType type: NSFetchedResultsChangeType,
+                  newIndexPath: NSIndexPath?) {
+    switch type {
+    case .Insert:
+      objectBlockOperation?.addExecutionBlock { [weak self] in
+        if let newIndexPath = newIndexPath {
+          dispatch_async(dispatch_get_main_queue()) {
+            self?.collectionView?.insertItemsAtIndexPaths([newIndexPath])
+          }
+        }
+      }
+
+    case .Delete:
+      objectBlockOperation?.addExecutionBlock { [weak self] in
+        if let indexPath = indexPath {
+          dispatch_async(dispatch_get_main_queue()) {
+            self?.collectionView?.deleteItemsAtIndexPaths([indexPath])
+          }
+        }
+      }
+
+    case .Update:
+      objectBlockOperation?.addExecutionBlock { [weak self] in
+        if let indexPath = indexPath {
+          dispatch_async(dispatch_get_main_queue()) {
+            self?.collectionView?.reloadItemsAtIndexPaths([indexPath])
+          }
+        }
+      }
+
+    case .Move:
+      objectBlockOperation?.addExecutionBlock { [weak self] in
+        if let indexPath = indexPath, newIndexPath = newIndexPath {
+          dispatch_async(dispatch_get_main_queue()) {
+            self?.collectionView?.moveItemAtIndexPath(indexPath, toIndexPath: newIndexPath)
+          }
+        }
+      }
+    }
+  }
+
   func controllerDidChangeContent(controller: NSFetchedResultsController) {
-    collectionView?.reloadData()
+    collectionView?.performBatchUpdates({
+      self.sectionBlockOperation?.start()
+      self.objectBlockOperation?.start()
+    }, completion: nil)
   }
 
 }
@@ -149,6 +228,8 @@ extension PostsViewController {
   }
 
 }
+
+// MARK: GetPostsOperationDelegate
 
 extension PostsViewController: GetPostsOperationDelegate {
 
