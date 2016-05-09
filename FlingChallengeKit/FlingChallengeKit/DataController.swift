@@ -36,7 +36,7 @@ final public class DataController {
       let coordinator = DataController.persistentStoreCoordinator
       var context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
       context.parentContext = DataController._mainQueueManagedObjectContext
-      context.mergePolicy = NSMergePolicy(mergeType: .MergeByPropertyStoreTrumpMergePolicyType)
+      context.mergePolicy = NSMergePolicy(mergeType: .MergeByPropertyObjectTrumpMergePolicyType)
       return context
     }
   }()
