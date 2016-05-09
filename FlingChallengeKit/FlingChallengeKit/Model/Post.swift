@@ -7,8 +7,18 @@
 //
 
 import Foundation
+import CoreData
 
 @objc(Post)
 public class Post: _Post {
-	// Custom logic goes here.
+
+  convenience init?(managedObjectContext: NSManagedObjectContext, representation: [String: AnyObject]) throws {
+    self.init(managedObjectContext: managedObjectContext)
+    identifier = try representation.get("ID")
+    imageID = try representation.get("ImageID")
+    userID = try representation.get("UserID")
+    userName = try representation.get("UserName")
+    title = try representation.get("Title")
+  }
+
 }

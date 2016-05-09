@@ -36,6 +36,7 @@
 		FAC6B6241CDFECC6007C1F9D /* FlingChallengeKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6231CDFECC6007C1F9D /* FlingChallengeKit.swift */; };
 		FAC6B6281CDFF1AF007C1F9D /* EndpointsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */; };
 		FAC6B62A1CE00589007C1F9D /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B6291CE00589007C1F9D /* Dictionary.swift */; };
+		FAC6B62E1CE009D9007C1F9D /* PostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC6B62D1CE009D9007C1F9D /* PostTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		FAC6B6231CDFECC6007C1F9D /* FlingChallengeKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlingChallengeKit.swift; sourceTree = "<group>"; };
 		FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsTests.swift; sourceTree = "<group>"; };
 		FAC6B6291CE00589007C1F9D /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		FAC6B62D1CE009D9007C1F9D /* PostTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				FAC6B6141CDFD570007C1F9D /* DataControllerTests.swift */,
 				FAC6B6271CDFF1AF007C1F9D /* EndpointsTests.swift */,
 				FA1CA73D1CDF942C0036CAA4 /* Info.plist */,
+				FAC6B62D1CE009D9007C1F9D /* PostTests.swift */,
 			);
 			path = FlingChallengeKitTests;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				FAC6B6151CDFD570007C1F9D /* DataControllerTests.swift in Sources */,
 				FAC6B6281CDFF1AF007C1F9D /* EndpointsTests.swift in Sources */,
 				FAC6B6131CDFCB3D007C1F9D /* DispatchTests.swift in Sources */,
+				FAC6B62E1CE009D9007C1F9D /* PostTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
