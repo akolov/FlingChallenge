@@ -41,14 +41,11 @@ final public class DataController {
     }
   }()
 
-  private static let persistentStoreName = "FlingChallenge.sqlite"
-  private static var managedObjectModel: NSManagedObjectModel?
-  private static var persistentStoreCoordinator: NSPersistentStoreCoordinator?
-  private static var _mainQueueManagedObjectContext: NSManagedObjectContext!
-
 }
 
-extension DataController {
+// MARK: Private
+
+private extension DataController {
 
   private static func initializeCoreDataStack() throws {
     assert(NSThread.isMainThread(), "\(#function) must be executed on main thread")
@@ -66,14 +63,10 @@ extension DataController {
     }
 
     let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
-    let storeURL = DataController.applicationDocumentsDirectory.URLByAppendingPathComponent(persistentStoreName)
-    let options = [
-      NSMigratePersistentStoresAutomaticallyOption: true,
-      NSInferMappingModelAutomaticallyOption: true
-    ]
-
-    try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
-
+    try coordinator.addPersistentStoreWithType(NSSQLiteStoreType,
+                                               configuration: nil,
+                                               URL: persistentStoreURL,
+                                               options: persistentStoreOptions)
     persistentStoreCoordinator = coordinator
 
     let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
@@ -81,5 +74,19 @@ extension DataController {
 
     _mainQueueManagedObjectContext = context
   }
+
+  private static let persistentStoreURL: NSURL = {
+    return DataController.applicationDocumentsDirectory.URLByAppendingPathComponent(persistentStoreName)
+  }()
+
+  private static let persistentStoreOptions = [
+    NSMigratePersistentStoresAutomaticallyOption: true,
+    NSInferMappingModelAutomaticallyOption: true
+  ]
+
+  private static let persistentStoreName = "FlingChallenge.sqlite"
+  private static var managedObjectModel: NSManagedObjectModel?
+  private static var persistentStoreCoordinator: NSPersistentStoreCoordinator?
+  private static var _mainQueueManagedObjectContext: NSManagedObjectContext!
 
 }
