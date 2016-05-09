@@ -12,13 +12,22 @@ import CoreData
 @objc(Post)
 public class Post: _Post {
 
-  convenience init?(managedObjectContext: NSManagedObjectContext, representation: [String: AnyObject]) throws {
-    self.init(managedObjectContext: managedObjectContext)
-    identifier = try representation.get("ID")
-    imageID = try representation.get("ImageID")
-    userID = try representation.get("UserID")
-    userName = try representation.get("UserName")
-    title = try representation.get("Title")
+  static func createOrUpdate(managedObjectContext context: NSManagedObjectContext,
+                             representation: [String: AnyObject]) throws {
+    let identifier = (try representation.get("ID") as NSNumber).longLongValue
+    let request = NSFetchRequest(entityName: self.entityName())
+    request.predicate = NSPredicate(format: "identifier == %lld", identifier)
+    var object = try context.executeFetchRequest(request).first as? Post
+    if object == nil {
+      object = Post(managedObjectContext: context)
+    }
+
+    if let object = object {
+      object.imageID = (try representation.get("ImageID") as NSNumber).longLongValue
+      object.userID = (try representation.get("UserID") as NSNumber).longLongValue
+      object.userName = try representation.get("UserName")
+      object.title = try representation.get("Title")
+    }
   }
 
 }

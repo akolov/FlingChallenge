@@ -6,11 +6,6 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="userID" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="userName" attributeType="String" syncable="YES"/>
-        <compoundIndexes>
-            <compoundIndex>
-                <index value="identifier"/>
-            </compoundIndex>
-        </compoundIndexes>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="identifier"/>
