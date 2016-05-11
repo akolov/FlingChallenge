@@ -34,19 +34,15 @@ class PostTests: XCTestCase {
 
     do {
       let controller = try DataController()
-      var post: Post!
-      try controller.withManagedObjectContext { context in
-        post = try Post(managedObjectContext: context, representation: object)
+      try controller.withPrivateContext { context in
+        let post = try Post.createOrUpdate(managedObjectContext: context, representation: object)!
+        XCTAssertNotNil(post)
+        XCTAssertEqual(post.identifier, try object.get("ID"))
+        XCTAssertEqual(post.imageID, try object.get("ImageID"))
+        XCTAssertEqual(post.title, object["Title"])
+        XCTAssertEqual(post.userID, try object.get("UserID"))
+        XCTAssertEqual(post.userName, object["UserName"])
       }
-
-      XCTAssertNotNil(post)
-      XCTAssertNotNil(post.objectID.persistentStore)
-      XCTAssertFalse(post.objectID.temporaryID)
-      XCTAssertEqual(post.identifier, (try object.get("ID") as NSNumber).longLongValue)
-      XCTAssertEqual(post.imageID, (try object.get("ImageID") as NSNumber).longLongValue)
-      XCTAssertEqual(post.title, object["Title"])
-      XCTAssertEqual(post.userID, (try object.get("UserID") as NSNumber).longLongValue)
-      XCTAssertEqual(post.userName, object["UserName"])
     }
     catch {
       XCTFail()
@@ -71,7 +67,7 @@ class PostTests: XCTestCase {
 
     do {
       let fetchRequest = NSFetchRequest(entityName: Post.entityName())
-      let count = try DataController().managedObjectContext.countForFetchRequest(fetchRequest, error: nil)
+      let count = try DataController().mainQueueManagedObjectContext.countForFetchRequest(fetchRequest, error: nil)
 
       if count == NSNotFound {
         XCTFail()

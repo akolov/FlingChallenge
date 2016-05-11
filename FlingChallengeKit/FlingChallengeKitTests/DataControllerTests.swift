@@ -20,7 +20,7 @@ class DataControllerTests: XCTestCase {
       let controller = try DataController()
       XCTAssertNotNil(controller)
 
-      let mainContext = controller.managedObjectContext
+      let mainContext = controller.mainQueueManagedObjectContext
       XCTAssertNotNil(mainContext)
       XCTAssertTrue(mainContext.concurrencyType == .MainQueueConcurrencyType)
     }
@@ -36,7 +36,7 @@ class DataControllerTests: XCTestCase {
       XCTAssertFalse(NSThread.isMainThread())
       do {
         let anotherController = try DataController()
-        let privateContext = anotherController.managedObjectContext
+        let privateContext = anotherController.privateManagedObjectContext
         XCTAssertNotNil(privateContext)
         XCTAssertTrue(privateContext.concurrencyType == .PrivateQueueConcurrencyType)
         XCTAssertTrue(privateContext.parentContext?.concurrencyType == .MainQueueConcurrencyType)

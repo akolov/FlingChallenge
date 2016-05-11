@@ -5,54 +5,54 @@ import Foundation
 import CoreData
 
 public enum PostAttributes: String {
-    case identifier = "identifier"
-    case imageID = "imageID"
-    case title = "title"
-    case userID = "userID"
-    case userName = "userName"
+  case identifier = "identifier"
+  case imageID = "imageID"
+  case title = "title"
+  case userID = "userID"
+  case userName = "userName"
 }
 
 public class _Post: NSManagedObject {
 
-    // MARK: - Class methods
+  // MARK: - Class methods
 
-    public class func entityName () -> String {
-        return "Post"
-    }
+  public class func entityName () -> String {
+    return "Post"
+  }
 
-    public class func entity(managedObjectContext: NSManagedObjectContext) -> NSEntityDescription? {
-        return NSEntityDescription.entityForName(self.entityName(), inManagedObjectContext: managedObjectContext)
-    }
+  public class func entity(managedObjectContext: NSManagedObjectContext) -> NSEntityDescription? {
+    return NSEntityDescription.entityForName(self.entityName(), inManagedObjectContext: managedObjectContext)
+  }
 
-    // MARK: - Life cycle methods
+  // MARK: - Life cycle methods
 
-    public override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
-        super.init(entity: entity, insertIntoManagedObjectContext: context)
-    }
+  public override init(entity: NSEntityDescription, insertIntoManagedObjectContext context: NSManagedObjectContext?) {
+    super.init(entity: entity, insertIntoManagedObjectContext: context)
+  }
 
-    public convenience init?(managedObjectContext: NSManagedObjectContext) {
-        guard let entity = _Post.entity(managedObjectContext) else { return nil }
-        self.init(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
-    }
+  public convenience init?(managedObjectContext: NSManagedObjectContext) {
+    guard let entity = _Post.entity(managedObjectContext) else { return nil }
+    self.init(entity: entity, insertIntoManagedObjectContext: managedObjectContext)
+  }
 
-    // MARK: - Properties
+  // MARK: - Properties
 
-    @NSManaged public
-    var identifier: Int64
+  @NSManaged public
+  var identifier: NSNumber
 
-    @NSManaged public
-    var imageID: Int64
+  @NSManaged public
+  var imageID: NSNumber
 
-    @NSManaged public
-    var title: String?
+  @NSManaged public
+  var title: String?
 
-    @NSManaged public
-    var userID: Int64
+  @NSManaged public
+  var userID: NSNumber
 
-    @NSManaged public
-    var userName: String
+  @NSManaged public
+  var userName: String
 
-    // MARK: - Relationships
+  // MARK: - Relationships
 
 }
 

@@ -216,7 +216,7 @@ extension PostsViewController {
     if let post = fetchedResultsController?.objectAtIndexPath(indexPath) as? Post {
       cell.titleLabel.text = post.title
       cell.authorLabel.text = String(format: NSLocalizedString("by %@", comment: "Author label title"), post.userName)
-      cell.imageView.imageID = post.imageID
+      cell.imageView.imageID = post.imageID.longLongValue
     }
     else {
       cell.titleLabel.text = nil

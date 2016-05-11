@@ -13,8 +13,8 @@ import CoreData
 public class Post: _Post {
 
   static func createOrUpdate(managedObjectContext context: NSManagedObjectContext,
-                             representation: [String: AnyObject]) throws {
-    let identifier = (try representation.get("ID") as NSNumber).longLongValue
+                             representation: [String: AnyObject]) throws -> Post? {
+    let identifier: NSNumber = try representation.get("ID")
     let request = NSFetchRequest(entityName: self.entityName())
     request.predicate = NSPredicate(format: "identifier == %lld", identifier)
     var object = try context.executeFetchRequest(request).first as? Post
@@ -24,11 +24,13 @@ public class Post: _Post {
     }
 
     if let object = object {
-      object.imageID = (try representation.get("ImageID") as NSNumber).longLongValue
-      object.userID = (try representation.get("UserID") as NSNumber).longLongValue
+      object.imageID = try representation.get("ImageID")
+      object.userID = try representation.get("UserID")
       object.userName = try representation.get("UserName")
       object.title = try representation.get("Title")
     }
+
+    return object
   }
 
 }
