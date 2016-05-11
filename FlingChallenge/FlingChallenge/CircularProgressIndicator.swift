@@ -31,6 +31,7 @@ class CircularProgressIndicator: UIView {
     }
   }
 
+  @IBInspectable
   var hideWhenFinished: Bool = true
 
   private func initialize() {
